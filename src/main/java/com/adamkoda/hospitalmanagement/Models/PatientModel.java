@@ -35,7 +35,7 @@ public class PatientModel {
         return name;
     }
     
-    public String getdoctorId() {
+    public String getDoctorId() {
         return doctorId;
     }
 

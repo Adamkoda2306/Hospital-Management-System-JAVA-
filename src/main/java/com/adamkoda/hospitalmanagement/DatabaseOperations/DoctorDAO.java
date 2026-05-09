@@ -61,7 +61,14 @@ public class DoctorDAO {
     public List<DoctorModel> getAllDoctorDetails() {
         List<DoctorModel> doctors = new ArrayList<>();
         for (Document doc: collection.find(eq("isResigned", false))) {
-            DoctorModel data = getDoctorDetails(doc.getString("id"));
+            HashMap<String, String> patients = new HashMap<>();
+            Document patientsDoc = (Document) doc.get("patientsList");
+            if (patientsDoc != null) {
+                for (String key: patientsDoc.keySet()) {
+                    patients.put(key, patientsDoc.getString(key));
+                }
+            }
+            DoctorModel data = new DoctorModel(doc.getString("id"), doc.getString("name"), doc.getString("speciality"), doc.getBoolean("isAvailable"), doc.getBoolean("isResigned"), patients);
             doctors.add(data);
         }
         return doctors;
