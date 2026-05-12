@@ -1,6 +1,7 @@
 package com.adamkoda.hospitalmanagement.Utils;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class GeneralUtils {
     private GeneralUtils() {
@@ -19,5 +20,11 @@ public class GeneralUtils {
         } catch (IOException | InterruptedException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @SuppressWarnings("resource")
+    public static void pause() {
+        System.out.println("\n\nPress ENTER to continue...");
+        new Scanner(System.in).nextLine();
     }
 }
