@@ -1,17 +1,16 @@
 package com.adamkoda.hospitalmanagement.Models;
 
 import com.adamkoda.hospitalmanagement.Utils.DatabaseUtils;
-import java.util.Date;
 
 public class AppointmentModel {
     private String id;
     private String patientId;
     private String doctorId;
     private Boolean isConsulted;
-    private Date appointmentDate;
+    private String appointmentDate;
 
 
-    public AppointmentModel(String patientId, String doctorId, Date appointmenDate) {
+    public AppointmentModel(String patientId, String doctorId, String appointmenDate) {
         this.id = DatabaseUtils.generateId("APT");
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -19,7 +18,7 @@ public class AppointmentModel {
         this.appointmentDate = appointmenDate;
     }
 
-    public AppointmentModel(String id, String patientId, String doctorId, Boolean isConsulted, Date appointmenDate) {
+    public AppointmentModel(String id, String patientId, String doctorId, Boolean isConsulted, String appointmenDate) {
         this.id = id;
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -40,7 +39,7 @@ public class AppointmentModel {
         return patientId;
     }
 
-    public Date getAppointmentDate() {
+    public String getAppointmentDate() {
         return appointmentDate;
     }
 
@@ -49,7 +48,7 @@ public class AppointmentModel {
     }
 
     // Setters
-    public void setAppointmentDate(Date appointmentDate) {
+    public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 
