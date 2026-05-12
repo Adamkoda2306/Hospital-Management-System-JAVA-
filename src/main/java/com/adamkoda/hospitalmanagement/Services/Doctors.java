@@ -21,12 +21,11 @@ public class Doctors {
     System.out.println("Doctor's Id: " + data.getId());
     System.out.println("Doctor's Name: " + data.getName());
     System.out.println("Speciality: " + data.getSpeciality());
-    System.out.println("                                                      ----------------------------");
-    System.out.println("                                                      |   "+ (data.getIsAvailable() ? "    Available" : "Not Available") + "  |");
-    System.out.println("                                                      ----------------------------");
-    System.out.println("----------------------------");
-    System.out.println("|   "+ (data.getIsResgined() ? "    Resigned" : "Not Resigned") + "  |");
-    System.out.println("----------------------------");
+    String availability = data.getIsAvailable() ? "  Available  " : "Not Available";
+    String resigned = data.getIsResgined() ? "   Resigned   " : " Not Resigned ";
+    System.out.println("-----------------     ------------------");
+    System.out.println("| " + availability + " |     | " + resigned + " |");
+    System.out.println("-----------------     ------------------");
     if (!multiple) {
         System.out.println("Patient's List: ");
         for (String patient: (data.getPatientsList()).keySet()) {
@@ -42,19 +41,21 @@ public class Doctors {
     System.out.println("Doctor's Id: " + data.getId());
     System.out.println("Doctor's Name: " + data.getName());
     System.out.println("Speciality: " + data.getSpeciality());
-    System.out.println("                                                      ----------------------------");
-    System.out.println("                                                      |   "+ (data.getIsAvailable() ? "    Available" : "Not Available") + "  |");
-    System.out.println("                                                      ----------------------------");
+    String availability = data.getIsAvailable() ? "  Available  " : "Not Available";
+    System.out.println("-----------------     ");
+    System.out.println("| " + availability + " | ");
+    System.out.println("-----------------    ");
     GeneralUtils.pause();
    }
 
    public void addDoctor() {
     System.out.println("ADDING NEW DOCTOR");
     System.out.println("*****************************************************\n");
+    scanner.nextLine();
     System.out.print("Enter Doctor's Name: ");
-    String name = scanner.next();
+    String name = scanner.nextLine();
     System.out.print("Enter Doctor's Speciality: ");
-    String speciality = scanner.next();
+    String speciality = scanner.nextLine();
     DoctorModel data = new DoctorModel(name, speciality);
     databaseOperations.addDoctor(data);
     GeneralUtils.clearConsole();

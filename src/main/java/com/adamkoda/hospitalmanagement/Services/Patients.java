@@ -32,10 +32,11 @@ public class Patients {
    public void addPatients() {
     System.out.println("ADDING NEW PATIENT");
     System.out.println("*****************************************************\n");
+    scanner.nextLine();
     System.out.print("Enter Patient's Name: ");
-    String name = scanner.next();
+    String name = scanner.nextLine();
     System.out.print("Enter Doctor's Id: ");
-    String docId = scanner.next();
+    String docId = scanner.nextLine();
     PatientModel data = new PatientModel(name, docId);
     databaseOperations.addPatient(data);
     GeneralUtils.clearConsole();
