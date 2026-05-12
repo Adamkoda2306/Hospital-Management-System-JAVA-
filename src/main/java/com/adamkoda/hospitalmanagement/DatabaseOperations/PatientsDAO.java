@@ -1,7 +1,6 @@
 package com.adamkoda.hospitalmanagement.DatabaseOperations;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
@@ -42,15 +41,15 @@ public class PatientsDAO {
         if (doc == null) {
             return null;
         }
-        List<Date> previousCheckups = doc.getList("previousCheckups", Date.class);
+        List<String> previousCheckups = doc.getList("previousCheckups", String.class);
         PatientModel data = new PatientModel(doc.getString("id"), doc.getString("name"), doc.getString("doctorId"), previousCheckups);
         return data;
     }
 
-    public List<PatientModel> getAllPatientModels() {
+    public List<PatientModel> getAllPatientDetails() {
         List<PatientModel> patients = new ArrayList<>();
         for (Document doc: collection.find()) {
-            List<Date> previousCheckups = doc.getList("previousCheckups", Date.class);
+            List<String> previousCheckups = doc.getList("previousCheckups", String.class);
             PatientModel data = new PatientModel(doc.getString("id"), doc.getString("name"), doc.getString("doctorId"), previousCheckups);
             patients.add(data);
         }

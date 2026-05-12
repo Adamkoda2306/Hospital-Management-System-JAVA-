@@ -47,14 +47,14 @@ public class AppointmentsDAO {
         if (doc == null) {
             return null;
         }
-        AppointmentModel data = new AppointmentModel(doc.getString("id"), doc.getString("patientId"), doc.getString("doctorId"), doc.getBoolean("isConsulted"), doc.getDate("appointmentDate"));
+        AppointmentModel data = new AppointmentModel(doc.getString("id"), doc.getString("patientId"), doc.getString("doctorId"), doc.getBoolean("isConsulted"), doc.getString("appointmentDate"));
         return data;
     }
 
     public List<AppointmentModel> getAllAppointmentDetails() {
         List<AppointmentModel> appointments = new ArrayList<>();
         for (Document doc: collection.find(eq("isConsulted", false))) {
-            AppointmentModel data = new AppointmentModel(doc.getString("id"), doc.getString("patientId"), doc.getString("doctorId"), doc.getBoolean("isConsulted"), doc.getDate("appointmentDate"));
+            AppointmentModel data = new AppointmentModel(doc.getString("id"), doc.getString("patientId"), doc.getString("doctorId"), doc.getBoolean("isConsulted"), doc.getString("appointmentDate"));
             appointments.add(data);
         }
         return appointments;
