@@ -154,6 +154,7 @@ public class MainMenu {
    }
 
    public void AppointmentDashboard() {
+    Appointments appointment = new Appointments(scanner);
 
    }
 }
