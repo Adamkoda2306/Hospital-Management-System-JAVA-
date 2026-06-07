@@ -36,10 +36,11 @@ public class Appointments {
     System.out.println("Doctor's Name: " + doctorData.getName());
     System.out.println("Patient's Name: " + patientData.getName());
     System.out.println("Appointment Date: " + data.getAppointmentDate());
+    String availability = doctorData.getIsAvailable() ? "  Available  " : "Not Available";
     String consulted = data.getIsConsulted() ? "  DONE  " : "NOT DONE";
-    System.out.println("-----------------     ");
-    System.out.println("| " + consulted + " |     | " );
-    System.out.println("-----------------     ");
+    System.out.println("-----------------     ------------------");
+    System.out.println("| " + availability + " |     | " + consulted + " |");
+    System.out.println("-----------------     ------------------");
     GeneralUtils.pause();
    }
 
