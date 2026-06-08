@@ -8,7 +8,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         MainMenu menu = new MainMenu(scanner);
 
-        System.out.println("WELCOME TO HOSPITAL MANAGEMENT SYSTEM");
+        System.out.println("\n\nWELCOME TO HOSPITAL MANAGEMENT SYSTEM");
         System.out.println("**********************************************************");
         System.out.println("MAIN MENU: ");
         System.out.println("1. Patient's DashBoard");

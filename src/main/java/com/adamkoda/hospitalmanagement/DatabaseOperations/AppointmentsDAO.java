@@ -18,15 +18,12 @@ public class AppointmentsDAO {
             db.getCollection("appointment");
 
     public void addAppointment(AppointmentModel data) {
-
         Document doc = new Document("id", data.getId())
                 .append("patientId", data.getPatientId())
                 .append("doctorId", data.getDoctorId())
                 .append("isConsulted", data.getIsConsulted())
                 .append("appointmentDate", data.getAppointmentDate());
-
         collection.insertOne(doc);
-
         System.out.println("Inserted");
     }
 
