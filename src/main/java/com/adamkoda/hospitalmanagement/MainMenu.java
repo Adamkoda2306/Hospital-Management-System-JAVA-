@@ -34,9 +34,9 @@ public class MainMenu {
                     break;
                 }
                 case 2: {
-                    GeneralUtils.clearConsole(); //APT-20260608-8A9C39
-                    patients.checkPatient(); //DOC-20260512-8722CC
-                    operationSelection = 999; //PAT-20260512-C70348
+                    GeneralUtils.clearConsole();
+                    patients.checkPatient();
+                    operationSelection = 999;
                     break;
                 }
                 case 3: {
