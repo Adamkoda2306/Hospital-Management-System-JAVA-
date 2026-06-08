@@ -1,0 +1,32 @@
+mvn compile exec:java -Dexec.mainClass="com.adamkoda.hospitalmanagement.App"
+
+
+=> before running the below commands make sure the app is running and in the pom.xml add this 
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.4.1</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>
+                            com.adamkoda.hospitalmanagement.App
+                        </mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+so that it doesn't make any issue to the JVM like which class is main class
+
+
+
+mvn clean install -U  
+
+mvn clean package
+
+java -jar target/hospitalManagement-1.0-SNAPSHOT.jar
