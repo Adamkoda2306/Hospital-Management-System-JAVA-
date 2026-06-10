@@ -11,11 +11,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Appointments {
-    /*
-        1) Book Appointments
-        2) check Appointments
-        3) Update Appointments
-    */
    private Scanner scanner;
    private AppointmentsDAO databaseOperations;
    private DoctorDAO doctor;
