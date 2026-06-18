@@ -57,9 +57,9 @@ public class Patients {
    public void listPatients() {
     GeneralUtils.clearConsole();
     List<PatientModel> patientData = databaseOperations.getAllPatientDetails();
-    System.out.println("=====================================================");
+    System.out.println("====================================================");
     System.out.println("Patient's List : ");
-    System.out.println("=====================================================");
+    System.out.println("====================================================");
     for (PatientModel data: patientData) {
         displayPatientDetails(data, true);
     }
